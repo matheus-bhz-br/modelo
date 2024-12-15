@@ -1,0 +1,38 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <!-- Círculo externo representando o ambiente conectado -->
+  <circle cx="200" cy="100" r="80" fill="none" stroke="#2D3047" stroke-width="2"/>
+  
+  <!-- Padrão hexagonal interno representando a estrutura da IA -->
+  <path d="M200 40 L252 70 L252 130 L200 160 L148 130 L148 70 Z" 
+        fill="none" 
+        stroke="#2D3047" 
+        stroke-width="2"/>
+  
+  <!-- Linhas internas representando conexões -->
+  <path d="M200 40 L200 160" stroke="#B0BEC5" stroke-width="1.5" opacity="0.6"/>
+  <path d="M148 70 L252 130" stroke="#B0BEC5" stroke-width="1.5" opacity="0.6"/>
+  <path d="M252 70 L148 130" stroke="#B0BEC5" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Pequeno círculo central pulsante -->
+  <circle cx="200" cy="100" r="8" fill="#6EA4BF">
+    <animate attributeName="r" 
+             values="8;10;8" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+    <animate attributeName="opacity" 
+             values="0.8;1;0.8" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Nome do projeto - Ajustado com cor harmoniosa -->
+  <text x="200" y="220" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        fill="#4A647E" 
+        text-anchor="middle" 
+        font-weight="300">
+    modelo
+  </text>
+</svg>
