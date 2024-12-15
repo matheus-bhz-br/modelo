@@ -1,0 +1,5674 @@
+[
+    {
+        "id": "4ecb83617864c2f7",
+        "type": "tab",
+        "label": "Casa Congonhas",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1c78a64314a2eb31",
+        "type": "tab",
+        "label": "Cômodos",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9ceb6e00dd97dca3",
+        "type": "tab",
+        "label": "Quarto Casal",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5752b4298eda7a52",
+        "type": "subflow",
+        "name": "Ajuste fino",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "132c4060da366d78"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 960,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "a1f2de0fda991f0d",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 960,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "a1f2de0fda991f0d",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 960,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "98c5d6ed7f49f701",
+                        "port": 0
+                    },
+                    {
+                        "id": "2f8fd17eb9ea3aa7",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 960,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "98c5d6ed7f49f701",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 960,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "1b08f161d3f1b865",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "598ff042badb21e7",
+        "type": "subflow",
+        "name": "Ajuste inicial",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "3332e8809532d6a7"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1500,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "3796cb5cf75279f7",
+                        "port": 0
+                    },
+                    {
+                        "id": "c09998eff971b724",
+                        "port": 0
+                    },
+                    {
+                        "id": "7f836c2277c31273",
+                        "port": 0
+                    },
+                    {
+                        "id": "ff377a368cee5f73",
+                        "port": 0
+                    },
+                    {
+                        "id": "6ecd4a68cdaad808",
+                        "port": 0
+                    },
+                    {
+                        "id": "b4793f822dad4853",
+                        "port": 0
+                    },
+                    {
+                        "id": "cbc41fe44e2e2a5c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "4a4afeb81d26ab29",
+        "type": "subflow",
+        "name": "Ajuste fino 2",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": []
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "a94e912c0e4462d0",
+        "type": "subflow",
+        "name": "Desativar luz",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": []
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "b9114951.82a318",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true
+    },
+    {
+        "id": "1b08f161d3f1b865",
+        "type": "switch",
+        "z": "5752b4298eda7a52",
+        "name": "Checar global.fino_luz",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "98c5d6ed7f49f701"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "132c4060da366d78",
+        "type": "switch",
+        "z": "5752b4298eda7a52",
+        "name": "Checar global.fino_lux",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "2f8fd17eb9ea3aa7"
+            ],
+            [
+                "1b08f161d3f1b865"
+            ]
+        ]
+    },
+    {
+        "id": "2f8fd17eb9ea3aa7",
+        "type": "switch",
+        "z": "5752b4298eda7a52",
+        "name": "Checar global.fino_luz",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "a1f2de0fda991f0d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "98c5d6ed7f49f701",
+        "type": "switch",
+        "z": "5752b4298eda7a52",
+        "name": "Checar global.fino_brilho",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a1f2de0fda991f0d",
+        "type": "switch",
+        "z": "5752b4298eda7a52",
+        "name": "Checar global.fino_brilho",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 160,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3332e8809532d6a7",
+        "type": "switch",
+        "z": "598ff042badb21e7",
+        "name": "Checar global.inicial_lux",
+        "property": "inicial_lux",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "10",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "11",
+                "vt": "num",
+                "v2": "20",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "21",
+                "vt": "num",
+                "v2": "30",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "31",
+                "vt": "num",
+                "v2": "40",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "41",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "51",
+                "vt": "num",
+                "v2": "60",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "61",
+                "vt": "num",
+                "v2": "70",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "71",
+                "vt": "num",
+                "v2": "80",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "81",
+                "vt": "num",
+                "v2": "90",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "91",
+                "vt": "num",
+                "v2": "100",
+                "v2t": "num"
+            },
+            {
+                "t": "gt",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 11,
+        "x": 250,
+        "y": 340,
+        "wires": [
+            [
+                "d21b5c124e13b638"
+            ],
+            [
+                "f70f977606d3f7c0"
+            ],
+            [
+                "66891092d0a96caa"
+            ],
+            [
+                "3a7b85c9b19e698e"
+            ],
+            [
+                "f70deb292d958af7"
+            ],
+            [
+                "28250641b286eeca"
+            ],
+            [
+                "4a31d89a7df27e4d"
+            ],
+            [
+                "e45076c2dbdbcfe4"
+            ],
+            [
+                "5e2007509de19b74"
+            ],
+            [
+                "c8197926bc72df32"
+            ],
+            [
+                "3c249d5b06c0dd9f"
+            ]
+        ]
+    },
+    {
+        "id": "d21b5c124e13b638",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 60,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "4a31d89a7df27e4d",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "40",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "28250641b286eeca",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "50",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "f70deb292d958af7",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "60",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 300,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "3a7b85c9b19e698e",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "70",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "66891092d0a96caa",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "80",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "f70f977606d3f7c0",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "90",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 120,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "c8197926bc72df32",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "10",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "5e2007509de19b74",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "20",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 540,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "e45076c2dbdbcfe4",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_brilho",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_brilho",
+                "pt": "global",
+                "to": "30",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 480,
+        "wires": [
+            [
+                "aa65948c996d7bc4"
+            ]
+        ]
+    },
+    {
+        "id": "aa65948c996d7bc4",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "nightEnd",
+        "endTime": "sunsetStart",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 900,
+        "y": 60,
+        "wires": [
+            [
+                "3796cb5cf75279f7"
+            ],
+            [
+                "90e35a945a2541fb"
+            ]
+        ]
+    },
+    {
+        "id": "90e35a945a2541fb",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "sunsetStart",
+        "endTime": "sunset",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 900,
+        "y": 120,
+        "wires": [
+            [
+                "c09998eff971b724"
+            ],
+            [
+                "278d0c4a11534112"
+            ]
+        ]
+    },
+    {
+        "id": "278d0c4a11534112",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "sunset",
+        "endTime": "dusk",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "7f836c2277c31273"
+            ],
+            [
+                "90587ad4adfb9515"
+            ]
+        ]
+    },
+    {
+        "id": "90587ad4adfb9515",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "dusk",
+        "endTime": "nauticalDusk",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 900,
+        "y": 240,
+        "wires": [
+            [
+                "ff377a368cee5f73"
+            ],
+            [
+                "7eac700631f11c96"
+            ]
+        ]
+    },
+    {
+        "id": "7eac700631f11c96",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "nauticalDusk",
+        "endTime": "night",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "6ecd4a68cdaad808"
+            ],
+            [
+                "1653e965c9647de6"
+            ]
+        ]
+    },
+    {
+        "id": "1653e965c9647de6",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "night",
+        "endTime": "nadir",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 870,
+        "y": 360,
+        "wires": [
+            [
+                "b4793f822dad4853"
+            ],
+            [
+                "d311e0561878ac13"
+            ]
+        ]
+    },
+    {
+        "id": "d311e0561878ac13",
+        "type": "time-range-switch",
+        "z": "598ff042badb21e7",
+        "name": "",
+        "lat": "-15.80313",
+        "lon": "-47.83052",
+        "startTime": "nadir",
+        "endTime": "nightEnd",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 880,
+        "y": 420,
+        "wires": [
+            [
+                "cbc41fe44e2e2a5c"
+            ],
+            [
+                "3c249d5b06c0dd9f"
+            ]
+        ]
+    },
+    {
+        "id": "3796cb5cf75279f7",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "4500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4793f822dad4853",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "1900",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ecd4a68cdaad808",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "2100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff377a368cee5f73",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "2350",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f836c2277c31273",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "2750",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c09998eff971b724",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "3250",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbc41fe44e2e2a5c",
+        "type": "change",
+        "z": "598ff042badb21e7",
+        "name": "Definir global.inicial_temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial_temperatura",
+                "pt": "global",
+                "to": "2000",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c249d5b06c0dd9f",
+        "type": "debug",
+        "z": "598ff042badb21e7",
+        "name": "Ajuste inicial",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "4fdf7abec4f8f258",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR Quarto Meninos",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.quartomeninos_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "c340ef0ef8f279fa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2b640109939cf6df",
+        "type": "server-state-changed",
+        "z": "4ecb83617864c2f7",
+        "name": "Porta da Sala foi aberta",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.porta_sala_contact"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "2e5963026139c18b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "525a9f8a274f3e7b",
+        "type": "delay",
+        "z": "4ecb83617864c2f7",
+        "name": "Aguardar 2 min",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "c779b2de9c285d19"
+            ]
+        ]
+    },
+    {
+        "id": "c779b2de9c285d19",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.quartocasal_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "4fdf7abec4f8f258"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c340ef0ef8f279fa",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR Banheiro",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.banheiro_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            [
+                "dbb9970d93bdb55e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dbb9970d93bdb55e",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR da Sala de Jantar",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.salajantar_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1430,
+        "y": 160,
+        "wires": [
+            [
+                "7d5184aab6987cca"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7d5184aab6987cca",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR da Sala de Estar",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.salaestar_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1690,
+        "y": 160,
+        "wires": [
+            [
+                "0af7d7c1594c4464"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9cc0d70f49578a16",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR da Cozinha",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.cozinha_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 2150,
+        "y": 160,
+        "wires": [
+            [
+                "18ff912c658f03a6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0af7d7c1594c4464",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR da Varanda",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.varanda_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1930,
+        "y": 160,
+        "wires": [
+            [
+                "9cc0d70f49578a16"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "18ff912c658f03a6",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR da Lavanderia",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.lavanderia_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 2380,
+        "y": 160,
+        "wires": [
+            [
+                "59767617d9476599"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "59767617d9476599",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se PIR do Banheiro de Apoio",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.banheiro_apoio_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 2640,
+        "y": 160,
+        "wires": [
+            [
+                "91c5cd33d5449432"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "91c5cd33d5449432",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "Desative Casa Congonhas",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.casa_congonhas"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 2920,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f187fb461cfe26c",
+        "type": "comment",
+        "z": "4ecb83617864c2f7",
+        "name": "Toma ação de manter a Casa Congonhas ativada ou de desligá-la conforme detecção de presença 2 minutos após abertura da porta da sala.",
+        "info": "# # ",
+        "x": 3530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f9727bb5cbc05c6c",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "Ative Casa Congonhas",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.casa_congonhas"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "525a9f8a274f3e7b",
+                "f0596614e80b8ecc"
+            ]
+        ]
+    },
+    {
+        "id": "6744bd604351e8ed",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Porta da Varanda aberta",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.porta_varanda_contact",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "018437422fd764a6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2e5963026139c18b",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Se Casa Congonhas ativa",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "525a9f8a274f3e7b",
+                "6744bd604351e8ed"
+            ],
+            [
+                "f9727bb5cbc05c6c"
+            ]
+        ]
+    },
+    {
+        "id": "018437422fd764a6",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "Notificar iPhone",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "notify.mobile_app_iphone_de_matheus",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"message\":\"A porta da Varanda está aberta.\",\"title\":\"Atenção\"}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "notify",
+        "service": "mobile_app_iphone_de_matheus",
+        "x": 700,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0596614e80b8ecc",
+        "type": "astrodata dayvalues",
+        "z": "4ecb83617864c2f7",
+        "name": "Posição solar - temperatura da cor",
+        "lon": 6.664795,
+        "lat": 51.465308,
+        "height": 0,
+        "lang": "en",
+        "offset": 0,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "be46b8d54bd886ec"
+            ]
+        ]
+    },
+    {
+        "id": "be46b8d54bd886ec",
+        "type": "function",
+        "z": "4ecb83617864c2f7",
+        "name": "Ajuste de horários",
+        "func": "// Lista de eventos relevantes com seus horários\nconst eventosRelevantes = [\n    { nome: \"Fim da noite\", horario: msg.nightEnd, saida: 0 },\n    { nome: \"Início do pôr do sol\", horario: msg.sunsetStart, saida: 1 },\n    { nome: \"Pôr do sol\", horario: msg.sunset, saida: 2 },\n    { nome: \"Crepúsculo civil\", horario: msg.dusk, saida: 3 },\n    { nome: \"Crepúsculo náutico\", horario: msg.nauticalDusk, saida: 4 },\n    { nome: \"Início da noite\", horario: msg.night, saida: 5 },\n    { nome: \"Nadir\", horario: msg.nadir, saida: 6 }\n];\n\n// Função para calcular o tempo restante (em milissegundos)\nfunction calcularDelay(horarioAlvo) {\n    let agora = new Date();\n    let horario = new Date(horarioAlvo);\n\n    // Ajusta o horário para o dia seguinte se já passou\n    if (horario < agora) {\n        horario.setDate(horario.getDate() + 1);\n    }\n\n    return horario - agora; // Retorna o delay em milissegundos\n}\n\n// Inicializa as saídas\nlet saidas = [null, null, null, null, null, null, null];\n\n// Configura timers para os eventos\neventosRelevantes.forEach(evento => {\n    if (evento.horario) {\n        const delay = calcularDelay(evento.horario);\n        if (delay > 0) {\n            setTimeout(() => {\n                // Envia a mensagem para a saída correspondente\n                let mensagem = { payload: evento.nome };\n                saidas[evento.saida] = mensagem;\n                node.send(saidas);\n                saidas[evento.saida] = null; // Reseta a saída\n            }, delay);\n        }\n    }\n});\n\n// Retornar null porque as mensagens são enviadas pelos timers\nreturn null;",
+        "outputs": 7,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "76c379843d4ebcf4"
+            ],
+            [
+                "126236225bd025b4"
+            ],
+            [
+                "edc3fc1f3b4861d3"
+            ],
+            [
+                "139627bb9bd49492"
+            ],
+            [
+                "4fd509440fea8164"
+            ],
+            [
+                "c972a28559e0ef80"
+            ],
+            [
+                "77084c919982aee6"
+            ]
+        ]
+    },
+    {
+        "id": "dc8c257d939b9440",
+        "type": "comment",
+        "z": "4ecb83617864c2f7",
+        "name": "👈 Após abertura da porta da sala, se Casa Congonhas estava ativa (havia alguém em casa), aguarda-se 2 min antes de analizar-se se não há mais movimento em casa (todas as pessoas saíram).",
+        "info": "",
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "76c379843d4ebcf4",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "e5e3caaf2c19bac7"
+            ],
+            [
+                "03135cf6c6b11970"
+            ]
+        ]
+    },
+    {
+        "id": "281b328ac6ab46ed",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "3250",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":3750}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "389516eb835a691e",
+        "type": "comment",
+        "z": "4ecb83617864c2f7",
+        "name": "👈 Após abertura da porta da sala, se Casa Congonhas estava inativa (não havia ningém em casa), aguarda-se 2 min antes de confirmar-se se se também houve movimento em casa (algém entrou).",
+        "info": "",
+        "x": 950,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "126236225bd025b4",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "281b328ac6ab46ed"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a09a5671144a8d3e",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "2750",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":2750}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edc3fc1f3b4861d3",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "a09a5671144a8d3e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "340ee672722ccee4",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "2350",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":2350}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "139627bb9bd49492",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 440,
+        "wires": [
+            [
+                "340ee672722ccee4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "88c1343041ce1615",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "2100",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":2100}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fd509440fea8164",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 500,
+        "wires": [
+            [
+                "88c1343041ce1615"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "aaae0210cd39ecd6",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "1900",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":1900}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c972a28559e0ef80",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 560,
+        "wires": [
+            [
+                "aaae0210cd39ecd6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "004ff2f55cbb51ec",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "2000",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":3750}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "77084c919982aee6",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 620,
+        "wires": [
+            [
+                "004ff2f55cbb51ec"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e5e3caaf2c19bac7",
+        "type": "api-call-service",
+        "z": "4ecb83617864c2f7",
+        "name": "4500",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"kelvin\":3750}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 830,
+        "y": 240,
+        "wires": [
+            [
+                "03135cf6c6b11970"
+            ]
+        ]
+    },
+    {
+        "id": "03135cf6c6b11970",
+        "type": "api-current-state",
+        "z": "4ecb83617864c2f7",
+        "name": "Quarto Meninos",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartomeninos_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 980,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "96ec7436181e82a1",
+        "type": "comment",
+        "z": "4ecb83617864c2f7",
+        "name": "👈 Quando a porta da sala é aberta, avisa se a porta da varanda também está (prevenção contra esquecimento de porta para área externa aberta)",
+        "info": "",
+        "x": 1290,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e121cde3fb0cb0f1",
+        "type": "catch",
+        "z": "4ecb83617864c2f7",
+        "name": "Capturar erros",
+        "scope": null,
+        "uncaught": false,
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "f715f4ba02e05503"
+            ]
+        ]
+    },
+    {
+        "id": "f715f4ba02e05503",
+        "type": "function",
+        "z": "4ecb83617864c2f7",
+        "name": "Formatar",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 40,
+        "wires": [
+            [
+                "6407a8f00e070235"
+            ]
+        ]
+    },
+    {
+        "id": "6407a8f00e070235",
+        "type": "file",
+        "z": "4ecb83617864c2f7",
+        "name": "Armazenar",
+        "filename": "/debug/quartocasal_debug.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 390,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c5faa4a0230e98e",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR do Quarto Casal detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.quartocasal_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "1251c42d9251d54b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0f6ccf72081b98ec",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR do Quarto Meninos detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.quartomeninos_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "968c727b4f11eab9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cb5b54e993ab7d2d",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR do Banheiro detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.banheiro_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "b6d09e62290d657e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3bf75caef7c4e386",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR da Sala de Estar detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.salaestar_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "3b102ee3209e6f38"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5c70c8bb7eaffd71",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR da Sala de Jantar detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.salajantar_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "303feaafd28611ba"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "783dede4910f4696",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR da Cozinha detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.cozinha_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "eed0d2f59b59d695"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "13d5206c15021801",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR Lavanderia detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.lavanderia_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "88d069bf9b9179c1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "756628893239af6b",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR do Banheiro de Apoio detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.banheiro_apoio_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "891e49144e1b983a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0144ba8f0469f8f4",
+        "type": "server-state-changed",
+        "z": "1c78a64314a2eb31",
+        "name": "PIR da Varanda detectou presença",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.varanda_pir_occupancy"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 180,
+        "y": 360,
+        "wires": [
+            [
+                "eb7e1d3de5bd34ae"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1251c42d9251d54b",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "373d667e40558498"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "968c727b4f11eab9",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "5127b7d6d0f4210a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b6d09e62290d657e",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "0b08f264b664782e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3b102ee3209e6f38",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "8dc19a88507230e1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "303feaafd28611ba",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "e9d7d3e8d3915c79"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eb7e1d3de5bd34ae",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "8727c9c531bd1954"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eed0d2f59b59d695",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "f605eb307945269b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "88d069bf9b9179c1",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "5371b69ffbd4ea41"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "891e49144e1b983a",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "e se Casa Congonhas Ativada",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.casa_congonhas",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 540,
+        "wires": [
+            [
+                "628c7df971578458"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "373d667e40558498",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.quarto_casal"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 810,
+        "y": 60,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "5127b7d6d0f4210a",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Quarto Meninos",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.quarto_meninos"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 820,
+        "y": 120,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "0b08f264b664782e",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Banheiro",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.banheiro_social"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 800,
+        "y": 180,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "8dc19a88507230e1",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Sala de Estar",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.sala_de_estar"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "e9d7d3e8d3915c79",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar sala de Jantar",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.sala_de_jantar"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 820,
+        "y": 300,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "8727c9c531bd1954",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Varanda",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.varanda"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 800,
+        "y": 360,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "f605eb307945269b",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Cozinha",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.cozinha"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 800,
+        "y": 420,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "5371b69ffbd4ea41",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Lavanderia",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.lavanderia"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 810,
+        "y": 480,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "628c7df971578458",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Ativar Banheiro de Apoio",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.banheiro_de_apoio"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 830,
+        "y": 540,
+        "wires": [
+            [
+                "c76b4fae5a6dd5b1"
+            ]
+        ]
+    },
+    {
+        "id": "c76b4fae5a6dd5b1",
+        "type": "delay",
+        "z": "1c78a64314a2eb31",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1100,
+        "y": 260,
+        "wires": [
+            [
+                "ae27e295c5fbddd9"
+            ]
+        ]
+    },
+    {
+        "id": "708fd5c64f75545a",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR Quarto Meninos sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.quartomeninos_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1490,
+        "y": 120,
+        "wires": [
+            [
+                "b184adca3e49fe3f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "df25c146be79088f",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR Quarto Casal sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.quartocasal_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1480,
+        "y": 60,
+        "wires": [
+            [
+                "0ae177cd1e408445"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4b9905d857ff5492",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR Banheiro sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.banheiro_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1470,
+        "y": 180,
+        "wires": [
+            [
+                "ae7336031debd2ed"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1fb62b19c87652b4",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR da Sala de Jantar sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.salajantar_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1500,
+        "y": 300,
+        "wires": [
+            [
+                "57dd8fec52e8d420"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "91251875ddad31cd",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR da Sala de Estar sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.salaestar_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1490,
+        "y": 240,
+        "wires": [
+            [
+                "62c2fbaf7eebd153"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "92dc1ee439e76ef8",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR da Cozinha sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.cozinha_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1480,
+        "y": 420,
+        "wires": [
+            [
+                "4fbdcae6d19d7f88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "234b6bbe68245d61",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR da Varanda sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.varanda_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1480,
+        "y": 360,
+        "wires": [
+            [
+                "5a57fc20c27642cf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1505a5768d65cdf2",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR da Lavanderia sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.lavanderia_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1480,
+        "y": 480,
+        "wires": [
+            [
+                "ac1d57c3576492ac"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b6197179403b6278",
+        "type": "api-current-state",
+        "z": "1c78a64314a2eb31",
+        "name": "Se PIR do Banheiro de Apoio sem movimento por 1 min",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.banheiro_apoio_pir_occupancy",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "1",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1510,
+        "y": 540,
+        "wires": [
+            [
+                "39111cd3f01bf7fa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0ae177cd1e408445",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Quarto Casal",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.quarto_casal"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1810,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b184adca3e49fe3f",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Quarto Meninos",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.quarto_meninos"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1830,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae7336031debd2ed",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Banheiro",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.banheiro_social"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1770,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57dd8fec52e8d420",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Sala de Estar",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.sala_de_estar"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1850,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62c2fbaf7eebd153",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar sala de Jantar",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.sala_de_jantar"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1830,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a57fc20c27642cf",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Varanda",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.varanda"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1790,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fbdcae6d19d7f88",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Cozinha",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.cozinha"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1790,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac1d57c3576492ac",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Lavanderia",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.lavanderia"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1800,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39111cd3f01bf7fa",
+        "type": "api-call-service",
+        "z": "1c78a64314a2eb31",
+        "name": "Desativar Banheiro de Apoio",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.banheiro_de_apoio"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "x": 1880,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae27e295c5fbddd9",
+        "type": "delay",
+        "z": "1c78a64314a2eb31",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1110,
+        "y": 320,
+        "wires": [
+            [
+                "df25c146be79088f",
+                "708fd5c64f75545a",
+                "4b9905d857ff5492",
+                "1fb62b19c87652b4",
+                "91251875ddad31cd",
+                "234b6bbe68245d61",
+                "92dc1ee439e76ef8",
+                "1505a5768d65cdf2",
+                "b6197179403b6278"
+            ]
+        ]
+    },
+    {
+        "id": "d8f24b0cf77eda88",
+        "type": "subflow:598ff042badb21e7",
+        "z": "9ceb6e00dd97dca3",
+        "name": "",
+        "x": 1590,
+        "y": 740,
+        "wires": [
+            [
+                "fc0914f553cdef60"
+            ]
+        ]
+    },
+    {
+        "id": "113ca279704bb5b2",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.inicial",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial",
+                "pt": "global",
+                "to": "casal",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "inicial_lux",
+                "pt": "global",
+                "to": "casal_lux",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1270,
+        "y": 740,
+        "wires": [
+            [
+                "d8f24b0cf77eda88"
+            ]
+        ]
+    },
+    {
+        "id": "675b85cd9952c2f5",
+        "type": "server-state-changed",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal ativado",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "input_boolean.quarto_casal"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "true",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "f2f975429dc63321"
+            ],
+            [
+                "e3f7a2d0e9c11fe2"
+            ]
+        ]
+    },
+    {
+        "id": "857a4db75c198b4b",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Lux",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "gte",
+        "entity_id": "sensor.quartomeninos_sensor_illuminance_lux",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "30ef2f3bf0fd8a59"
+            ],
+            [
+                "c2986fb5bd1da9f5"
+            ]
+        ]
+    },
+    {
+        "id": "5cf25ec732b3fc68",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Luz",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "02a5547b97e62386"
+            ],
+            [
+                "913a222cc041e92d"
+            ]
+        ]
+    },
+    {
+        "id": "30ef2f3bf0fd8a59",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal_lux",
+        "rules": [
+            {
+                "t": "set",
+                "p": "casal_lux",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "5cf25ec732b3fc68"
+            ]
+        ]
+    },
+    {
+        "id": "02a5547b97e62386",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal_luz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "casal_luz",
+                "pt": "global",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "casal_brilho",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "casal_temperatura",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "06d7a5ecef457de5"
+            ]
+        ]
+    },
+    {
+        "id": "913a222cc041e92d",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Luz",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "5f14d74e0a88f018"
+            ],
+            [
+                "f447982678341eb9"
+            ]
+        ]
+    },
+    {
+        "id": "5f14d74e0a88f018",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal_luz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "casal_luz",
+                "pt": "global",
+                "to": "on",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "casal_brilho",
+                "pt": "msg",
+                "to": "payload.attributes.brightness",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "casal_temperatura",
+                "pt": "msg",
+                "to": "payload.attributes.color_temp_kelvin",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "06d7a5ecef457de5"
+            ]
+        ]
+    },
+    {
+        "id": "e7c780163f994ce5",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_luz",
+        "property": "casal_luz",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1010,
+        "y": 680,
+        "wires": [
+            [
+                "550a4578b11ef5bf"
+            ],
+            [
+                "113ca279704bb5b2"
+            ]
+        ]
+    },
+    {
+        "id": "06d7a5ecef457de5",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_lux",
+        "property": "casal_lux",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 600,
+        "wires": [
+            [
+                "e3ad9e3328430706"
+            ],
+            [
+                "e7c780163f994ce5"
+            ]
+        ]
+    },
+    {
+        "id": "e3ad9e3328430706",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_luz",
+        "property": "casal_luz",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1010,
+        "y": 520,
+        "wires": [
+            [
+                "2a06efd0a50bcbeb"
+            ],
+            [
+                "58ec1173046f3819"
+            ]
+        ]
+    },
+    {
+        "id": "550a4578b11ef5bf",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_brilho",
+        "property": "casal_brilho",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1300,
+        "y": 620,
+        "wires": [
+            [
+                "58ec1173046f3819"
+            ],
+            [
+                "b255601ab7484f46"
+            ]
+        ]
+    },
+    {
+        "id": "2a06efd0a50bcbeb",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_brilho",
+        "property": "casal_brilho",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1300,
+        "y": 500,
+        "wires": [
+            [
+                "25ea4a57d4256ee1"
+            ],
+            [
+                "f67d993c5e742af4"
+            ]
+        ]
+    },
+    {
+        "id": "fc0914f553cdef60",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inicial",
+                "pt": "global",
+                "to": "livre",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "casal_brilho",
+                "pt": "global",
+                "to": "inicial_brilho",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "casal_temperatura",
+                "pt": "global",
+                "to": "inicial_temperatura",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1790,
+        "y": 740,
+        "wires": [
+            [
+                "e0672d8c5baa5eba"
+            ]
+        ]
+    },
+    {
+        "id": "b255601ab7484f46",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Aumentar brilho em 1%",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"brightness_step_pct\":1}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 1630,
+        "y": 680,
+        "wires": [
+            [
+                "e0dfe04541eed528"
+            ]
+        ]
+    },
+    {
+        "id": "e0dfe04541eed528",
+        "type": "delay",
+        "z": "9ceb6e00dd97dca3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1860,
+        "y": 620,
+        "wires": [
+            [
+                "3d5a94d42fe6d42c"
+            ]
+        ]
+    },
+    {
+        "id": "58ec1173046f3819",
+        "type": "delay",
+        "z": "9ceb6e00dd97dca3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1590,
+        "y": 620,
+        "wires": [
+            [
+                "3d5a94d42fe6d42c"
+            ]
+        ]
+    },
+    {
+        "id": "f67d993c5e742af4",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Reduzir brilho em 1%",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"brightness_step_pct\":-1}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 1620,
+        "y": 560,
+        "wires": [
+            [
+                "e0dfe04541eed528"
+            ]
+        ]
+    },
+    {
+        "id": "25ea4a57d4256ee1",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Desligar luz",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_off",
+        "x": 1590,
+        "y": 500,
+        "wires": [
+            [
+                "58ec1173046f3819"
+            ]
+        ]
+    },
+    {
+        "id": "b9454d445f9af1e2",
+        "type": "link in",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link in 1",
+        "links": [
+            "3d5a94d42fe6d42c",
+            "e04885640f80d757",
+            "83a64f909f70dc95",
+            "c362e48e786b8563"
+        ],
+        "x": 75,
+        "y": 500,
+        "wires": [
+            [
+                "98078a315fa3ee37"
+            ]
+        ]
+    },
+    {
+        "id": "3d5a94d42fe6d42c",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "b9454d445f9af1e2"
+        ],
+        "x": 1735,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "e0672d8c5baa5eba",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Ativar luz - brilho",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [
+            "82d805e4c306d2fcb29b6d491dbf416d"
+        ],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"brightness_pct\":global.meninos_brilho}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 2010,
+        "y": 740,
+        "wires": [
+            [
+                "c67b786df1f4ef0c"
+            ]
+        ]
+    },
+    {
+        "id": "c67b786df1f4ef0c",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Ativar luz - temperatura",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"kelvin\":global.meninos_temperatura}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 2250,
+        "y": 740,
+        "wires": [
+            [
+                "58ec1173046f3819"
+            ]
+        ]
+    },
+    {
+        "id": "98078a315fa3ee37",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal ativado",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.quarto_casal",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "f2f975429dc63321"
+            ],
+            [
+                "e3f7a2d0e9c11fe2"
+            ]
+        ]
+    },
+    {
+        "id": "e3f7a2d0e9c11fe2",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Luz",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 150,
+        "y": 620,
+        "wires": [
+            [
+                "f004e3395176a52c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f004e3395176a52c",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal_luz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "meninos_luz",
+                "pt": "global",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "meninos_brilho",
+                "pt": "msg",
+                "to": "payload.attributes.brightness",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "meninos_temperatura",
+                "pt": "msg",
+                "to": "payload.attributes.color_temp_kelvin",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "3c28a8d10aa01eac"
+            ]
+        ]
+    },
+    {
+        "id": "3c28a8d10aa01eac",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_brilho",
+        "property": "casal_brilho",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "924b0f7b268386b2"
+            ],
+            [
+                "d0ca2097465c210c"
+            ]
+        ]
+    },
+    {
+        "id": "d0ca2097465c210c",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Reduzir brilho em 1%",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"brightness_step_pct\":-1}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "e09ebe0e89393120"
+            ]
+        ]
+    },
+    {
+        "id": "924b0f7b268386b2",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Desligar luz",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_off",
+        "x": 410,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e09ebe0e89393120",
+        "type": "delay",
+        "z": "9ceb6e00dd97dca3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 840,
+        "wires": [
+            [
+                "e04885640f80d757"
+            ]
+        ]
+    },
+    {
+        "id": "e04885640f80d757",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "b9454d445f9af1e2"
+        ],
+        "x": 525,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "e3b4e6f84ac488d3",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Luz",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "83a64f909f70dc95"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "83a64f909f70dc95",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "b9454d445f9af1e2"
+        ],
+        "x": 575,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0bf0dad3a9554dbf",
+        "type": "server-state-changed",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir Casal",
+        "server": "b9114951.82a318",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "input_boolean.dormir"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "habool",
+        "ifState": "false",
+        "ifStateType": "bool",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "Oi",
+                "valueType": "str"
+            }
+        ],
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "40761b010af9ce5d"
+            ],
+            [
+                "e3b4e6f84ac488d3"
+            ]
+        ]
+    },
+    {
+        "id": "40761b010af9ce5d",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal ativado",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.quarto_casal",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "c622c64a2f321a62"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a0fe7b538e964f2",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Luz",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "light.quartocasal_luz",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 930,
+        "y": 120,
+        "wires": [
+            [
+                "c008bfa824aebb26"
+            ],
+            [
+                "ecdcb756d43ea5e5"
+            ]
+        ]
+    },
+    {
+        "id": "f2f975429dc63321",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.dormir",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "e3b4e6f84ac488d3"
+            ],
+            [
+                "857a4db75c198b4b"
+            ]
+        ]
+    },
+    {
+        "id": "ecdcb756d43ea5e5",
+        "type": "switch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar global.casal_brilho",
+        "property": "casal_brilho",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1180,
+        "y": 160,
+        "wires": [
+            [
+                "2e0bc8ffa48940fa"
+            ],
+            [
+                "58ec1173046f3819"
+            ]
+        ]
+    },
+    {
+        "id": "2e0bc8ffa48940fa",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Aumentar brilho em 1%",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"brightness_step_pct\":1}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 1470,
+        "y": 160,
+        "wires": [
+            [
+                "75e14fb5f3c72f96"
+            ]
+        ]
+    },
+    {
+        "id": "75e14fb5f3c72f96",
+        "type": "delay",
+        "z": "9ceb6e00dd97dca3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1690,
+        "y": 160,
+        "wires": [
+            [
+                "5ba166b7427789e9"
+            ]
+        ]
+    },
+    {
+        "id": "5ba166b7427789e9",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir Casal",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.dormir",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1870,
+        "y": 160,
+        "wires": [
+            [
+                "c362e48e786b8563"
+            ],
+            [
+                "037652b29ffd0d6d"
+            ]
+        ]
+    },
+    {
+        "id": "c362e48e786b8563",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "b9454d445f9af1e2"
+        ],
+        "x": 1995,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4ff8c52aab002629",
+        "type": "link in",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link in 3",
+        "links": [
+            "037652b29ffd0d6d",
+            "545327653f43ed40"
+        ],
+        "x": 75,
+        "y": 120,
+        "wires": [
+            [
+                "40761b010af9ce5d"
+            ]
+        ]
+    },
+    {
+        "id": "037652b29ffd0d6d",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "4ff8c52aab002629"
+        ],
+        "x": 1995,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c008bfa824aebb26",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Ativar luz com brilho mínimo",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.quartocasal_luz"
+        ],
+        "labelId": [],
+        "data": "{\"brightness_pct\":10}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 1180,
+        "y": 80,
+        "wires": [
+            [
+                "545327653f43ed40"
+            ]
+        ]
+    },
+    {
+        "id": "545327653f43ed40",
+        "type": "link out",
+        "z": "9ceb6e00dd97dca3",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "4ff8c52aab002629"
+        ],
+        "x": 1355,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3c28eff299c21658",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "NOTIFICAR FALHA DE SENSOR",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "notify.mobile_app_iphone_de_matheus",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"message\":\"Falha no sensor de luminosidade do quarto.\",\"title\":\"Atenção\"}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "notify",
+        "service": "mobile_app_iphone_de_matheus",
+        "x": 1250,
+        "y": 280,
+        "wires": [
+            [
+                "dd3d5e21a55566d6"
+            ]
+        ]
+    },
+    {
+        "id": "dd3d5e21a55566d6",
+        "type": "change",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Definir global.casal_lux",
+        "rules": [
+            {
+                "t": "set",
+                "p": "casal_lux",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 340,
+        "wires": [
+            [
+                "5cf25ec732b3fc68"
+            ]
+        ]
+    },
+    {
+        "id": "c2986fb5bd1da9f5",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar sensor de erro",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.falha_sensor_quarto_casal",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 720,
+        "y": 280,
+        "wires": [
+            [
+                "dd3d5e21a55566d6"
+            ],
+            [
+                "cbb24b3340732f7d"
+            ]
+        ]
+    },
+    {
+        "id": "cbb24b3340732f7d",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Ativar sensor de erro",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.falha_sensor_quarto_casal"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 980,
+        "y": 280,
+        "wires": [
+            [
+                "3c28eff299c21658"
+            ]
+        ]
+    },
+    {
+        "id": "c622c64a2f321a62",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Quarto Casal Lux",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "100",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "entity_id": "sensor.quartomeninos_sensor_illuminance_lux",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "8a0fe7b538e964f2"
+            ],
+            [
+                "58ec1173046f3819"
+            ]
+        ]
+    },
+    {
+        "id": "08694adb26614dd8",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "👇 Iniciar fluxo de despertar",
+        "info": "",
+        "x": 460,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fb291de7e80e963e",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "👇 Iniciar fluxo de sono",
+        "info": "",
+        "x": 440,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f6307e4c8a91881a",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "👇 Iniciar fluxo de ajuste",
+        "info": "",
+        "x": 450,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f48cf0cbfb3170fe",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir é falso, quarto com presença, pouca luminosidade e luz desligada --> Ligar luz com brilho mínimo e voltar ao início",
+        "info": "",
+        "x": 1790,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c539317547611123",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir é falso, quarto com presença, pouca luminosidade e luz ligada com brilho baixo --> Aumentar brilho e voltar ao início",
+        "info": "",
+        "x": 2440,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fc61230e5418f432",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Dormir era falso mas passou a ser verdadeiro, voltar ao início para reencaminhar ao fluxo correto.",
+        "info": "",
+        "x": 2350,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b4ab00746b1e1c4b",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Detectada falha no sensor de luminosidade, que é então definida como 0",
+        "info": "",
+        "x": 1660,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "bf246b5b0387fc55",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Luminosidade alta, luz ligada e brilho muito baixo --> desligar luz e voltar ao início em 10 segundos para monitorar o quarto",
+        "info": "",
+        "x": 2100,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "962e8da7077756c8",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Luminosidade alta, luz ligada e brilho alto --> reduzir brilho e voltar ao início em 1 segundo para novo ajuste",
+        "info": "",
+        "x": 2110,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "772e13731636d3df",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Luminosidade baixa, luz ligada e brilho menor que 100% --> aumentar brilho e voltar ao início em 1 segundo para novo ajuste",
+        "info": "",
+        "x": 2180,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "10945d922343a83a",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Luminosidade baixa e luz desligada --> ligar luz com ajustes iniciais de acordo com luminosidade para definir o brilho e posição do sol para definir temperatura da cor.",
+        "info": "",
+        "x": 2950,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "0106910f0c28f396",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Fluxo para desligamento gradual da luz",
+        "info": "",
+        "x": 490,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "82294cda40d9c7fd",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Variáveis de luminosidade e estado da luz são armazenadas em variável global antes de serem consultadas para garantir possibilidade de leitura do valor no futuro (chamada de subfluxo)",
+        "info": "",
+        "x": 1450,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f447982678341eb9",
+        "type": "api-current-state",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Checar sensor de erro",
+        "server": "b9114951.82a318",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.falha_luz_quarto_casal",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 960,
+        "y": 400,
+        "wires": [
+            [],
+            [
+                "39b58b3b6a25464e"
+            ]
+        ]
+    },
+    {
+        "id": "39b58b3b6a25464e",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Ativar sensor de erro",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "input_boolean.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.falha_sensor_quarto_casal"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "x": 1200,
+        "y": 400,
+        "wires": [
+            [
+                "b53217fc2ddd3ee4"
+            ]
+        ]
+    },
+    {
+        "id": "b53217fc2ddd3ee4",
+        "type": "api-call-service",
+        "z": "9ceb6e00dd97dca3",
+        "name": "NOTIFICAR FALHA DE SENSOR",
+        "server": "b9114951.82a318",
+        "version": 7,
+        "debugenabled": false,
+        "action": "notify.mobile_app_iphone_de_matheus",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\"message\":\"Falha no sensor de luminosidade do quarto.\",\"title\":\"Atenção\"}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "notify",
+        "service": "mobile_app_iphone_de_matheus",
+        "x": 1470,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d46dca77dba1ab9",
+        "type": "comment",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Detectada falha na luz do quarto, a ativação do sensor de erro ativa automação de luzes acessórias no Home Assistant",
+        "info": "",
+        "x": 2020,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5a8bc0a940e018e6",
+        "type": "catch",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Capturar erros",
+        "scope": null,
+        "uncaught": false,
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "6be64407edb0d2fa"
+            ]
+        ]
+    },
+    {
+        "id": "6be64407edb0d2fa",
+        "type": "function",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Formatar",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 40,
+        "wires": [
+            [
+                "e459e692b7ac78f7"
+            ]
+        ]
+    },
+    {
+        "id": "e459e692b7ac78f7",
+        "type": "file",
+        "z": "9ceb6e00dd97dca3",
+        "name": "Armazenar",
+        "filename": "/debug/quartocasal_debug.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 390,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    }
+]
